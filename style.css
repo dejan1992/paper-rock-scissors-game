@@ -1,0 +1,145 @@
+ @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap'); */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  font-family: 'Bangers', Arial, sans-serif;
+  background-color: rgb(151, 200, 52);
+}
+
+img{
+  width: 100px;
+}
+
+.flex{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.container{
+  margin-top: 50px;
+  padding: 0 100px;
+}
+
+.container h1{
+  font-size: 2.1rem;
+  text-align: center;
+}
+
+.title-results{
+  font-size: 25px;
+  margin-right: 25px;
+}
+.results{
+  font-size: 25px;
+}
+
+.results .win{
+  color:rgb(2, 78, 2);
+}
+.results .draw{
+  color:rgb(144, 94, 0);
+}
+.results .lose{
+  color:red;
+}
+
+.playground.flex{
+  margin-top: 40px;
+  justify-content: space-between;
+  }
+
+.left img{
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+} 
+
+.left h1,
+.right h1,
+.middle h1{
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.right img{
+  padding: 5px;
+}
+
+.left img:hover{
+  transform: rotate(-10deg) scale(1.2);
+} 
+
+.computer-pick{
+  animation: animation1 0.3s alternate ease-out;
+}
+
+@keyframes animation1{
+  to{
+    transform: rotate(-10deg) scale(1.8);
+  }
+}
+
+/* Result */
+
+ .middle{
+  display: none;
+  transition:all 1s;
+}
+
+.middle img{
+  padding: 5px;
+} 
+
+@media( max-width: 1201px){
+  .container{
+    margin-top: 0px;
+    padding: 0 
+  }
+  
+  .container h1{
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .playground.flex{
+    flex-direction: column;
+    margin-top: 0px;
+    justify-content: space-between;
+    padding: 0;
+    }
+
+    .title-results{
+      font-size: 18px;
+      margin-right: 15px;
+    }
+    .results{
+      font-size: 18px;
+    }
+    img{
+      width: 60px;
+    }
+
+    .left{
+      border-bottom: 1px solid black;
+     }
+    .middle{
+     border-bottom: 1px solid black;
+    }
+    .right{
+     border-bottom: 1px solid black;
+    }
+
+    .middle img{
+      margin-top: 20px;
+    } 
+
+    .score h3{
+      margin: 15px;
+    }
+}

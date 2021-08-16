@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Paper | Scissors | Rock</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Paper / Scissors / Rock</h1>
+    <div class="score flex">
+      <div class="title-results">
+        <h3>Wins</h3>
+        <h3>Drawes</h3>
+        <h3>Losses</h3>
+      </div>
+      <div class="results">
+        <h3 class="win">0</h3>
+        <h3 class="draw">0</h3>
+        <h3 class="lose">0</h3>
+      </div>
+    </div>
+
+    <div class="playground flex">
+      <div class="left">
+        <h1>Pick One</h1>
+        <img id="paper" class="far fa-hand-paper fa-4x" src="./paper.png" alt="">
+        <img id="rock" class="far fa-hand-rock fa-4x" src="./rock.png" alt="">
+        <img id="scissors" class="far fa-hand-scissors fa-4x" src="./scissors.png" alt="">
+      </div>
+
+      <div class="middle">
+        <h1 id="message">You Win!</h1>
+        <img id="pick-left" src="" alt="">
+        <img id="pick-right" src="" alt="">
+      </div>
+
+      <div class="right">
+        <h1>Computers Pick</h1>
+        <img id="paper1" class="far fa-hand-paper fa-4x" src="./paper.png" alt="">
+        <img id="rock1" class="far fa-hand-rock fa-4x" src="./rock.png" alt="">
+        <img id="scissors1" class="far fa-hand-scissors fa-4x" src="./scissors.png" alt="">
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </div>
+</body>
+
+</html>
