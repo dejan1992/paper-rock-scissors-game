@@ -38,7 +38,8 @@ left.addEventListener("click", function (e) {
   let pick2 = Math.floor((Math.random() * 3) + 1);
 
   // DRAW
-   if (pick === 1) {
+  if (pick === pick2) {
+    if (pick === 1) {
       pickLeft.src = "./paper.png";
       pickRight.src = "./paper.png";
 
