@@ -39,39 +39,38 @@ left.addEventListener("click", function (e) {
 
   // DRAW
   if (pick === pick2) {
-    if (pick === 1) {
-      pickLeft.src = "./paper.png";
-      pickRight.src = "./paper.png";
+    switch (pick) {
+      case (pick === 1):
+        pickLeft.src = "./paper.png";
+        pickRight.src = "./paper.png";
 
+        paperRight.classList.add("computer-pick")
+        setTimeout(function () {
+          paperRight.classList.remove("computer-pick")
+        }, 500);
+        break
 
-      paperRight.classList.add("computer-pick")
-      setTimeout(function () {
-        paperRight.classList.remove("computer-pick")
-      }, 500)
+      case (pick === 2):
+        pickLeft.src = "./rock.png";
+        pickRight.src = "./rock.png";
+        rockRight.classList.add("computer-pick")
 
+        setTimeout(function () {
+          rockRight.classList.remove("computer-pick")
+        }, 500);
+        break
 
-
-    } else if (pick === 2) {
-      pickLeft.src = "./rock.png";
-      pickRight.src = "./rock.png";
-      rockRight.classList.add("computer-pick")
-
-      setTimeout(function () {
-        rockRight.classList.remove("computer-pick")
-      }, 500)
-
-
-
-
-    } else if (pick === 3) {
-      pickLeft.src = "./scissors.png";
-      pickRight.src = "./scissors.png";
-      scissorsRight.classList.add("computer-pick")
-      setTimeout(function () {
-        scissorsRight.classList.remove("computer-pick")
-      }, 500)
+      case (pick === 3):
+        pickLeft.src = "./scissors.png";
+        pickRight.src = "./scissors.png";
+        scissorsRight.classList.add("computer-pick")
+        setTimeout(function () {
+          scissorsRight.classList.remove("computer-pick")
+        }, 500);
+        break
 
     }
+
     middle.style.display = 'block';
     message.innerText = "DRAW";
     message.style.backgroundColor = "orange";
