@@ -23,8 +23,6 @@ left.addEventListener("click", function (e) {
   // rock = 2
   // scissors = 3 
 
-
-
   let pick = '';
   if (e.target.classList.contains("fa-hand-paper")) {
     pick = 1;
@@ -37,168 +35,159 @@ left.addEventListener("click", function (e) {
 
   let pick2 = Math.floor((Math.random() * 3) + 1);
 
-  // DRAW
-  if (pick === pick2) {
-    if (pick === 1) {
+  // Switch
+  switch (true) {
+    case (pick === 1 && pick2 === 1):
+      // result
       pickLeft.src = "./paper.png";
       pickRight.src = "./paper.png";
-
-
+      //computers pick
       paperRight.classList.add("computer-pick")
       setTimeout(function () {
         paperRight.classList.remove("computer-pick")
-      }, 500)
+      }, 500);
+      youDraw();
+      drawCounter();
+      break;
 
-
-
-    } else if (pick === 2) {
+    case (pick === 2 && pick2 === 2):
+      // result
       pickLeft.src = "./rock.png";
       pickRight.src = "./rock.png";
-      rockRight.classList.add("computer-pick")
-
+      //computers pick
+      rockRight.classList.add("computer-pick");
       setTimeout(function () {
         rockRight.classList.remove("computer-pick")
-      }, 500)
+      }, 500);
+      youDraw();
+      drawCounter();
+      break;
 
-
-
-
-    } else if (pick === 3) {
+    case (pick === 3 && pick2 === 3):
+      // result
       pickLeft.src = "./scissors.png";
       pickRight.src = "./scissors.png";
+      //computers pick
       scissorsRight.classList.add("computer-pick")
       setTimeout(function () {
         scissorsRight.classList.remove("computer-pick")
-      }, 500)
+      }, 500);
+      youDraw();
+      drawCounter();
+      break;
 
-    }
-    middle.style.display = 'block';
-    message.innerText = "DRAW";
-    message.style.backgroundColor = "orange";
+    case (pick === 1 && pick2 === 2):
+      // result
+      pickLeft.src = "./paper.png";
+      pickRight.src = "./rock.png";
+      //computers pick
+      rockRight.classList.add("computer-pick")
+      setTimeout(function () {
+        rockRight.classList.remove("computer-pick")
+      }, 500);
+      youWin();
+      winCounter();
+      break;
 
-    // draw counter
-    drawNum++;
-    draw.textContent = drawNum;
+    case (pick === 1 && pick2 === 3):
+      // result
+      pickLeft.src = "./paper.png";
+      pickRight.src = "./scissors.png";
+      //computers pick
+      scissorsRight.classList.add("computer-pick")
+      setTimeout(function () {
+        scissorsRight.classList.remove("computer-pick")
+      }, 500);
+      youLose();
+      loseCounter();
+      break;
 
-    // WIN OR LOSSE
-  } else if (pick === 1 & pick2 === 2) {
-    middle.style.display = 'block';
-    message.innerText = "YOU WIN";
-    message.style.backgroundColor = "green";
-    // result
-    pickLeft.src = "./paper.png";
-    pickRight.src = "./rock.png";
+    case (pick === 2 && pick2 === 1):
+      // result
+      pickLeft.src = "./rock.png";
+      pickRight.src = "./paper.png";
+      //computers pick
+      paperRight.classList.add("computer-pick")
+      setTimeout(function () {
+        paperRight.classList.remove("computer-pick")
+      }, 500);
+      youLose();
+      loseCounter();
+      break;
 
-    // win counter
-    winNum++;
-    win.textContent = winNum;
+    case (pick === 3 && pick2 === 1):
+      // result
+      pickLeft.src = "./scissors.png";
+      pickRight.src = "./paper.png";
+      //computers pick
+      paperRight.classList.add("computer-pick")
+      setTimeout(function () {
+        paperRight.classList.remove("computer-pick")
+      }, 500);
+      youWin();
+      winCounter()
+      break;
 
-    //computers pick
-    rockRight.classList.add("computer-pick")
-    setTimeout(function () {
-      rockRight.classList.remove("computer-pick")
-    }, 500)
+    case (pick === 2 && pick2 === 3):
+      // result
+      pickLeft.src = "./rock.png";
+      pickRight.src = "./scissors.png";
+      //computers pick
+      scissorsRight.classList.add("computer-pick")
+      setTimeout(function () {
+        scissorsRight.classList.remove("computer-pick")
+      }, 500);
+      youWin();
+      winCounter();
+      break;
 
-
-  } else if (pick === 1 & pick2 === 3) {
-    middle.style.display = 'block';
-    message.innerText = "YOU LOSE";
-    message.style.backgroundColor = "red";
-
-    // result
-    pickLeft.src = "./paper.png";
-    pickRight.src = "./scissors.png";
-
-    // lose counter
-    loseNum++;
-    lose.textContent = loseNum;
-
-    //computers pick
-    scissorsRight.classList.add("computer-pick")
-    setTimeout(function () {
-      scissorsRight.classList.remove("computer-pick")
-    }, 500)
-
-  } else if (pick === 2 & pick2 === 1) {
-    middle.style.display = 'block';
-    message.innerText = "YOU LOSE";
-    message.style.backgroundColor = "red";
-
-    // result
-    pickLeft.src = "./rock.png";
-    pickRight.src = "./paper.png";
-
-    // lose counter
-    loseNum++;
-    lose.textContent = loseNum;
-
-    paperRight.classList.add("computer-pick")
-    setTimeout(function () {
-      paperRight.classList.remove("computer-pick")
-    }, 500)
-
-  } else if (pick === 3 & pick2 === 1) {
-    middle.style.display = 'block';
-    message.innerText = "YOU WIN";
-    message.style.backgroundColor = "GREEN";
-
-    // result
-    pickLeft.src = "./scissors.png";
-    pickRight.src = "./paper.png";
-
-    // win counter
-    winNum++;
-    win.textContent = winNum;
-
-    paperRight.classList.add("computer-pick")
-    setTimeout(function () {
-      paperRight.classList.remove("computer-pick")
-    }, 500)
-
-
-  } else if (pick === 2 & pick2 === 3) {
-    middle.style.display = 'block';
-    message.innerText = "YOU WIN";
-    message.style.backgroundColor = "green";
-
-    // result
-    pickLeft.src = "./rock.png";
-    pickRight.src = "./scissors.png";
-
-    // win counter
-    winNum++;
-    win.textContent = winNum;
-
-    //computers pick
-    scissorsRight.classList.add("computer-pick")
-    setTimeout(function () {
-      scissorsRight.classList.remove("computer-pick")
-    }, 500)
-
-  } else if (pick === 3 & pick2 === 2) {
-    middle.style.display = 'block';
-    message.innerText = "YOU LOSE";
-    message.style.backgroundColor = "red";
-
-    // result
-    pickLeft.src = "./scissors.png";
-    pickRight.src = "./rock.png";
-
-    // lose counter
-    loseNum++;
-    lose.textContent = loseNum;
-
-    //computers pick
-    rockRight.classList.add("computer-pick")
-    setTimeout(function () {
-      rockRight.classList.remove("computer-pick")
-    }, 500)
+    case (pick === 3 && pick2 === 2):
+      // result
+      pickLeft.src = "./scissors.png";
+      pickRight.src = "./rock.png";
+      //computers pick
+      rockRight.classList.add("computer-pick")
+      setTimeout(function () {
+        rockRight.classList.remove("computer-pick")
+      }, 500);
+      youLose();
+      loseCounter();
+      break;
   }
-
-
-
-
-
   e.preventDefault();
 })
 
+//Functions
+function drawCounter() {
+  drawNum++;
+  draw.textContent = drawNum;
+}
+
+function winCounter() {
+  winNum++;
+  win.textContent = winNum;
+}
+
+function loseCounter() {
+  loseNum++;
+  lose.textContent = loseNum;
+}
+
+function youLose() {
+  middle.style.display = 'block';
+  message.innerText = "YOU LOSE";
+  message.style.backgroundColor = "red";
+}
+
+
+function youDraw() {
+  middle.style.display = 'block';
+  message.innerText = "DRAW";
+  message.style.backgroundColor = "orange";
+}
+
+function youWin() {
+  middle.style.display = 'block';
+  message.innerText = "YOU WIN";
+  message.style.backgroundColor = "GREEN";
+}
